@@ -138,6 +138,8 @@ def create_patient_profile(mapper, connection, target):
 # ----------------------
 # RUN APP
 # ----------------------
+flask_app = create_app()
+celery_app = flask_app.extensions["celery"]
+
 if __name__ == '__main__':
-    app = create_app()
-    app.run(debug=True)
+    flask_app.run(debug=True)
